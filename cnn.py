@@ -23,7 +23,7 @@ def create_cnn(input_shape, hidden_dim, output_dim):
     x = conv_relu_pool(3, (3,3), (2,2))(x)
     x = Flatten()(x)
     x = Dense(hidden_dim, activation='relu')(x)
-    output = Dense(output_dim, activation='sigmoid')(x)
+    output = Dense(output_dim, activation='softmax')(x)
 
     cnn_model = Model(input, output)
     return cnn_model
